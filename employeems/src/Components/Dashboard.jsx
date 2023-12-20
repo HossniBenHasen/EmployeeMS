@@ -4,6 +4,16 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import axios from "axios";
 
 const Dashboard = () => {
+    const navigate = useNavigate()
+    axios.defaults.withCredentials = true
+    const handelLogOut = () => {
+            axios.get('http://localhost:3000/auth/logOut')
+                .then(result =>{
+                    if(result.data.Status){
+                        navigate('/adminlogin')
+                    }
+                })
+    }
     return (
         <div className="container-fluid">
             <div className="row flex-nowrap">
@@ -59,7 +69,7 @@ const Dashboard = () => {
                                     <span className="ms-2 d-none d-sm-inline">Profile</span>
                                 </Link>
                             </li>
-                            <li className="w-100">
+                            <li className="w-100" onClick={handelLogOut}>
                                 <Link
                                     className="nav-link px-0 align-middle text-white"
                                 >
