@@ -50,7 +50,7 @@ const Login = () => {
                                    onChange={(e) => setValues({...values,password : e.target.value})}
                             />
                         </div>
-                        <button className='btn btn-success w-100 rounded-0'>Submit</button>
+                        <button className='btn btn-success w-100 rounded-0'>Login</button>
                     </form>
              </div>
         </div>
