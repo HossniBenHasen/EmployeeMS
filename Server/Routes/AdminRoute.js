@@ -58,5 +58,8 @@ router.get('/employee',(req,res) => {
         return res.json({ Status: true, Result: result });
     });
 })
-
+router.get('/logOut',(req,res) =>{
+    res.clearCookie('token')
+    return res.json({Status: true})
+})
 export {router as adminRouter}
